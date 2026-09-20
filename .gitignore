@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+_smoke-demo/
+_empty-demo/
+.vscode/
+.idea/

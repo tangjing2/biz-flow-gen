@@ -1,0 +1,54 @@
+html, body, #app { margin: 0; height: 100%; }
+.bf { display: flex; height: 100vh; background: #f0f2f5; font-family: "PingFang SC","Microsoft YaHei",sans-serif; }
+.bf__side { width: 200px; background: #fff; border-right: 1px solid #e5e7eb; display: flex; flex-direction: column; padding: 16px 12px; gap: 12px; overflow-y: auto; }
+.bf__side-title { font-size: 14px; font-weight: 700; color: #374151; }
+.bf__shapes { display: flex; flex-direction: column; gap: 8px; }
+.bf__shape-btn { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fafbfc; cursor: pointer; font-size: 13px; color: #4b5563; transition: all .15s; }
+.bf__shape-btn:hover { border-color: #2563eb; background: #eff6ff; }
+.bf__shape-icon { width: 48px; height: 28px; flex-shrink: 0; }
+.bf__side-hint { font-size: 12px; color: #9ca3af; line-height: 1.6; margin-top: auto; }
+.bf__shape-divider { height: 1px; background: #e5e7eb; margin: 4px 0; }
+.bf__main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.bf__bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #fff; border-bottom: 1px solid #e5e7eb; }
+.bf__bar-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.bf__bar-left strong { font-size: 15px; color: #1f2937; }
+.bf__bar-left code { font-size: 12px; color: #6b7280; background: #f3f4f6; padding: 2px 8px; border-radius: 4px; max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bf__dirty { font-size: 12px; color: #d97706; background: #fef3c7; padding: 2px 8px; border-radius: 4px; }
+.bf__bar-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.bf__msg { font-size: 12px; color: #16a34a; margin-right: 4px; }
+.bf__btn { padding: 4px 12px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 13px; color: #374151; }
+.bf__btn:hover { border-color: #2563eb; color: #2563eb; }
+.bf__btn--primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+.bf__btn--primary:hover { background: #1d4ed8; color: #fff; }
+.bf__btn--primary:disabled { background: #9ca3af; border-color: #9ca3af; cursor: not-allowed; }
+.bf__matrix-tag { font-size: 12px; color: #4338ca; background: #e0e7ff; padding: 2px 8px; border-radius: 4px; margin-right: 4px; }
+.bf__zoom { font-size: 12px; color: #6b7280; min-width: 40px; text-align: center; }
+.bf__error { padding: 40px; text-align: center; color: #dc2626; font-size: 14px; }
+.bf__canvas { flex: 1; width: 100%; height: 100%; cursor: grab; background-image: radial-gradient(circle, #e0e0e0 1px, transparent 1px); background-size: 20px 20px; }
+.bf__canvas:active { cursor: grabbing; }
+.bf__lanes { pointer-events: none; }
+.bf__lane-head { pointer-events: all; cursor: text; }
+.bf__lane-label { font-size: 13px; font-weight: 600; fill: #4b5563; pointer-events: none; }
+.bf__lane-add { pointer-events: all; cursor: pointer; }
+.bf__lane-add:hover rect { fill: #c7d2fe; }
+.bf__lane-add-text { font-size: 16px; font-weight: 700; fill: #4338ca; pointer-events: none; }
+.bf__lane-resize { pointer-events: stroke; }
+.bf__lane-resize:not(.bf__lane-resize--row) { cursor: col-resize; }
+.bf__lane-resize--row { cursor: row-resize; }
+.bf__lane-resize-line { opacity: 0.55; }
+.bf__lane-resize:hover .bf__lane-resize-line,
+.bf__lane-resize.is-active .bf__lane-resize-line { opacity: 1; stroke: #2563eb; }
+.bf__node { cursor: move; }
+.bf__node--anno { filter: drop-shadow(0 1px 3px rgba(0,0,0,.08)); }
+.bf__node-text-wrap { pointer-events: none; }
+.bf__node-text { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 13px; color: #1f2937; padding: 4px; box-sizing: border-box; white-space: pre-wrap; word-break: break-word; line-height: 1.4; }
+.bf__anno-text { font-size: 12px; color: #5c4a00; text-align: left; justify-content: flex-start; }
+.bf__port { fill: #fff; stroke: #2563eb; stroke-width: 2; cursor: crosshair; opacity: 0; transition: opacity .15s; }
+.bf__node:hover .bf__port { opacity: 1; }
+.bf__edge { cursor: pointer; }
+.bf__edge-label { font-size: 12px; fill: #4b5563; }
+.bf__edge-handle { fill: #2563eb; stroke: #fff; stroke-width: 2; cursor: grab; }
+.bf__edge-handle--bend { fill: #fff; stroke: #2563eb; stroke-width: 2.5; cursor: move; }
+.bf__edge-handle:active { cursor: grabbing; }
+.bf__edit-input { width: 100%; height: 100%; border: 2px solid #2563eb; border-radius: 4px; font-size: 13px; padding: 0 4px; outline: none; box-sizing: border-box; }
+.bf__edit-input--node { text-align: center; }
